@@ -73,7 +73,36 @@ class wser (BaseHTTPRequestHandler):
             logmesg = token+",unknown,unknown"
         
         print(message)
-        logging.info(logmesg)                
+        logging.info(logmesg)
+    
+    def do_OPTIONS (self):
+        self.send_response (200)
+        print('OPTIONS called')
+        
+    def do_POST (self):
+        self.send_response (200)
+        print('POST called')
+    
+    def do_HEAD (self):
+        self.send_response (200)
+        print('HEAD called')
+        
+    def do_PUT (self):
+        self.send_response (200)
+        print('PUT called')
+        
+    def do_DELETE (self):
+        self.send_response (200)
+        print('DELETE called')
+        
+    def do_CONNECT (self):
+        self.send_response (200)
+        print('CONNECT called')
+        
+    def do_TRACE (self):
+        self.send_response (200)
+        print('TRACE called')
+        
                     
 if __name__ == "__main__":
     webser = HTTPServer((hName, Port), wser)
